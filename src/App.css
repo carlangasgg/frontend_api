@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+/* src/App.css */
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 500px;
+  outline: none;
+  opacity: 0; /* Start with hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.Modal.Open {
+  opacity: 1; /* End with visible */
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Start with hidden */
+}
+
+.Overlay.Open {
+  opacity: 1; /* End with visible */
+}
+
+
+
