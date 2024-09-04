@@ -1,6 +1,6 @@
 // src/components/ProductList.js
 import React, { useState, useEffect } from 'react';
-import { getProducts } from '../services/productService';
+import { getProducts } from '../../services/productService';
 import ProductModal from './ProductModal';
 
 function ProductList() {

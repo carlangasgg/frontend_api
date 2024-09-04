@@ -1,6 +1,6 @@
 // src/components/ProductForm.js
 import React, { useState } from 'react';
-import { createProduct } from '../services/productService';
+import { createProduct } from '../../services/productService';
 
 function ProductForm({ onProductCreated }) {
   const [name, setName] = useState('');
