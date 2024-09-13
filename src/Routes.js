@@ -5,6 +5,7 @@ import LandingPage from './components/landingPage/LandingPage.js';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/auth/PrivateRoute';
 
 const AppRoutes = () => {
   return (
@@ -12,7 +13,7 @@ const AppRoutes = () => {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<PrivateRoute element={Dashboard} />} />
     </Routes>
   );
 };

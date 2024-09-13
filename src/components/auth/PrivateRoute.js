@@ -1,19 +1,12 @@
-// src/components/PrivateRoute.js
+// src/components/auth/PrivateRoute.js
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import authService from '../services/authService';
+import { Navigate } from 'react-router-dom';
+import authService from '../../services/authService'; // Adjust path as needed
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      authService.getCurrentUser() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to="/login" />
-      )
-    }
-  />
-);
+const PrivateRoute = ({ element: Element, ...rest }) => {
+  const isAuthenticated = !!authService.getCurrentUser();
+
+  return isAuthenticated ? <Element {...rest} /> : <Navigate to="/login" />;
+};
 
 export default PrivateRoute;
